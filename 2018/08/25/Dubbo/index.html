@@ -108,20 +108,20 @@
 
 
 
-  <meta name="description" content="Dubbo基础小结">
+  <meta name="description" content="Dubbo是什么？12Dubbo是一个经典RPC（远程调用）框架，解决的是远程服务调用的问题。它的前身是阿里的项目，中间经过当当，然后现在是Apache的项目，由阿里进行维护。Dubbo同时也叫服务治理中间件。 Dubbo的架构 1234567891011121.容器2.服务提供者3.注册中心4.服务消费者5.监控中心dubbo的运行流程：	服务容器（spring容器）启动后，服务提供者将服务地址">
 <meta name="keywords" content="dubbo,java技术">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Dubbo基础小结   &lt;!--文章标题--&gt;">
 <meta property="og:url" content="http://yoursite.com/2018/08/25/Dubbo/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Dubbo基础小结">
+<meta property="og:description" content="Dubbo是什么？12Dubbo是一个经典RPC（远程调用）框架，解决的是远程服务调用的问题。它的前身是阿里的项目，中间经过当当，然后现在是Apache的项目，由阿里进行维护。Dubbo同时也叫服务治理中间件。 Dubbo的架构 1234567891011121.容器2.服务提供者3.注册中心4.服务消费者5.监控中心dubbo的运行流程：	服务容器（spring容器）启动后，服务提供者将服务地址">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="d:/传智播客/复习总结/Dubbox/微信图片_20180822105747.png">
 <meta property="og:image" content="d:/传智播客/复习总结/Dubbox/dubbo入门详解.bmp">
-<meta property="og:updated_time" content="2018-08-25T16:21:56.509Z">
+<meta property="og:updated_time" content="2018-08-26T06:55:07.957Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Dubbo基础小结   &lt;!--文章标题--&gt;">
-<meta name="twitter:description" content="Dubbo基础小结">
+<meta name="twitter:description" content="Dubbo是什么？12Dubbo是一个经典RPC（远程调用）框架，解决的是远程服务调用的问题。它的前身是阿里的项目，中间经过当当，然后现在是Apache的项目，由阿里进行维护。Dubbo同时也叫服务治理中间件。 Dubbo的架构 1234567891011121.容器2.服务提供者3.注册中心4.服务消费者5.监控中心dubbo的运行流程：	服务容器（spring容器）启动后，服务提供者将服务地址">
 <meta name="twitter:image" content="d:/传智播客/复习总结/Dubbox/微信图片_20180822105747.png">
 
 
@@ -343,7 +343,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Updated at: 2018-08-26 00:21:56" itemprop="dateModified" datetime="2018-08-26T00:21:56+08:00">2018-08-26</time>
+                <time title="Updated at: 2018-08-26 14:55:07" itemprop="dateModified" datetime="2018-08-26T14:55:07+08:00">2018-08-26</time>
               
             
           </span>
@@ -380,8 +380,6 @@
           
 
           
-              <div class="post-description">Dubbo基础小结</div>
-          
 
         </div>
       </header>
@@ -399,6 +397,7 @@
         <h2 id="Dubbo是什么？"><a href="#Dubbo是什么？" class="headerlink" title="Dubbo是什么？"></a>Dubbo是什么？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Dubbo是一个经典RPC（远程调用）框架，解决的是远程服务调用的问题。它的前身是阿里的项目，中间经过当当，然后现在是Apache的项目，由阿里进行维护。</span><br><span class="line">Dubbo同时也叫服务治理中间件。</span><br></pre></td></tr></table></figure>
 <h2 id="Dubbo的架构"><a href="#Dubbo的架构" class="headerlink" title="Dubbo的架构"></a>Dubbo的架构</h2><p><img src="D:\传智播客\复习总结\Dubbox\微信图片_20180822105747.png" alt=""></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">1.容器</span><br><span class="line">2.服务提供者</span><br><span class="line">3.注册中心</span><br><span class="line">4.服务消费者</span><br><span class="line">5.监控中心</span><br><span class="line">dubbo的运行流程：</span><br><span class="line">	服务容器（spring容器）启动后，服务提供者将服务地址注册到注册中心。</span><br><span class="line">	服务消费者向注册中心订阅服务，获得服务地址，然后通过服务地址远程调用服务提供者提供的服务，如果调用失败，会再选择另一个服务地址进行调用。</span><br><span class="line">	如果注册中心服务发生变更，将会通过长连接推送变更数据给服务消费者。</span><br><span class="line">	监控中心定时发送心跳包给服务生产者和消费者，知道服务生产者和消费者的健康情况。</span><br><span class="line">	</span><br><span class="line">心跳包就是在客户端和服务器间定时通知对方自己状态的一个自己定义的命令字，按照一定的时间间隔发送，类似于心跳，所以叫做心跳包。</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">节点角色说明：</span><br><span class="line">    Provider: 暴露服务的服务提供方。</span><br><span class="line">    Consumer: 调用远程服务的服务消费方。</span><br><span class="line">    Registry: 服务注册与发现的注册中心。</span><br><span class="line">    Monitor: 统计服务的调用次调和调用时间的监控中心。</span><br><span class="line">    Container: 服务运行容器。</span><br><span class="line">调用关系说明：</span><br><span class="line">    0. 服务容器负责启动，加载，运行服务提供者。</span><br><span class="line">    1. 服务提供者在启动时，向注册中心注册自己提供的服务。</span><br><span class="line">    2. 服务消费者在启动时，向注册中心订阅自己所需的服务。</span><br><span class="line">    3. 注册中心返回服务提供者地址列表给消费者，如果有变更，注册中心将基于长连接推送变更数据给消费者。</span><br><span class="line">    4. 服务消费者，从提供者地址列表中，基于软负载均衡算法，选一台提供者进行调用，如果调用失败，再选另一台调用。</span><br><span class="line">    5. 服务消费者和提供者，在内存中累计调用次数和调用时间，定时每分钟发送一次统计数据到监控中心。</span><br></pre></td></tr></table></figure>
 <h2 id="注册中心Zookeeper"><a href="#注册中心Zookeeper" class="headerlink" title="注册中心Zookeeper"></a>注册中心Zookeeper</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">	官方推荐使用 zookeeper 注册中心。注册中心负责服务地址的注册与查找，相当于目录</span><br><span class="line">服务，服务提供者和消费者只在启动时与注册中心交互，注册中心不转发请求，压力较小。</span><br><span class="line">	Zookeeper 是 Apacahe Hadoop 的子项目，是一个树型的目录服务，支持变更推送，适</span><br><span class="line">合作为 Dubbox 服务的注册中心，工业强度较高，可用于生产环境。</span><br><span class="line"></span><br><span class="line">Dubbo的注册中心除了使用zookeeper还可以使用Redis【必备利器】，其功能类似于消息中间件。</span><br><span class="line"></span><br><span class="line">zookeeper   (配置文件和目录集中管理的软件)！ java开发的</span><br><span class="line"></span><br><span class="line">	1、检查jdk环境是否正常</span><br><span class="line"></span><br><span class="line">	2、上传安装包</span><br><span class="line"></span><br><span class="line">	3、安装</span><br><span class="line">			3.1 拷贝一个zoo.cfg配置文件，修改dataDir</span><br><span class="line">			3.2 创建一个data目录</span><br></pre></td></tr></table></figure>
 <h2 id="怎么用"><a href="#怎么用" class="headerlink" title="怎么用?"></a>怎么用?</h2><p>小案例，详细分析见图：</p>
@@ -436,22 +435,6 @@
       
       
 
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2018/08/25/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-          </div>
-        </div>
       
 
       
@@ -518,7 +501,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-count">1</span>
                     <span class="site-state-item-name">Artikel</span>
                   </a>
                 </div>
